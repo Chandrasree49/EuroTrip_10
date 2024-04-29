@@ -1,14 +1,24 @@
+// AllTourists.js
+
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
-const AllTourists = () => {
+const AllTourists = ({ countryName }) => {
   const [spots, setSpots] = useState([]);
   const [sortBy, setSortBy] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const location = useLocation();
+  const searchParams = new URLSearchParams(location.search);
+  const country = searchParams.get("country");
 
   useEffect(() => {
     setIsLoading(true);
-    fetch("http://localhost:3002/spots")
+    let url = "http://localhost:3002/spots";
+    if (country) {
+      url = `http://localhost:3002/spotsbycountry?country_name=${country}`;
+    }
+    fetch(url)
       .then((res) => res.json())
       .then((data) => {
         setSpots(data);
@@ -18,7 +28,7 @@ const AllTourists = () => {
         console.error("Error retrieving spots:", error);
         setIsLoading(false);
       });
-  }, []);
+  }, [countryName]);
 
   const handleSortChange = (e) => {
     setSortBy(e.target.value);
@@ -31,9 +41,11 @@ const AllTourists = () => {
 
   return (
     <div className="container mx-auto mt-8">
-      <h1 className="text-3xl mb-4 text-center font-bold" style={{color:"from-purple-400"}}>All Tourists Spots</h1>
+      <h1 className="text-3xl mb-4 text-center font-bold">
+        All Tourists Spots
+      </h1>
       <div className="flex justify-center mb-4">
-        <label htmlFor="sortBy" className="mr-2 mt-1 text-2xl font-bold " style={{color:"#701a75"}}>
+        <label htmlFor="sortBy" className="mr-2 mt-1 text-2xl font-bold">
           Sort by:
         </label>
         <select
@@ -41,9 +53,8 @@ const AllTourists = () => {
           value={sortBy}
           onChange={handleSortChange}
           className="border p-2 font-semibold"
-        style={{border: "2px solid purple", borderRadius:"10px"}}
         >
-          <option value="" >Select</option>
+          <option value="">Select</option>
           <option value="ascending">Ascending</option>
           <option value="descending">Descending</option>
         </select>

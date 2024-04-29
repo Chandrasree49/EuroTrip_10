@@ -7,7 +7,7 @@ const ViewDetails = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    fetch(`http://localhost:3002/spots/${id}`)
+    fetch(`http://localhost:3002/spotsbyId/${id}`)
       .then((res) => {
         if (!res.ok) {
           throw new Error("Spot not found");
@@ -16,6 +16,7 @@ const ViewDetails = () => {
       })
       .then((data) => {
         setSpot(data);
+        console.log(data);
         setIsLoading(false);
       })
       .catch((error) => {

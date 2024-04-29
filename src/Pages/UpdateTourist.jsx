@@ -1,12 +1,10 @@
-import React, { useState, useContext } from "react";
-
+import React, { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { AuthContext } from "../component/AuthProvider/AuthProvider";
 
-const AddTourists = () => {
-  const { user } = useContext(AuthContext);
-  console.log(user.email);
+const UpdateTourist = () => {
+  const { id } = useParams();
   const initialFormData = {
     image: "",
     tourists_spot_name: "",
@@ -17,12 +15,33 @@ const AddTourists = () => {
     seasonality: "",
     travel_time: "",
     totalVisitorsPerYear: "",
-    userEmail: user.email,
-    userName: user.displayName,
   };
 
   const [formData, setFormData] = useState({ ...initialFormData });
   const [isLoading, setIsLoading] = useState(false);
+
+  useEffect(() => {
+    
+    fetch(`http://localhost:3002/spotsbyId/${id}`)
+      .then((res) => res.json())
+      .then((data) => {
+        setFormData({
+          image: data.image,
+          tourists_spot_name: data.tourists_spot_name,
+          country_Name: data.country_Name,
+          location: data.location,
+          short_description: data.short_description,
+          average_cost: data.average_cost,
+          seasonality: data.seasonality,
+          travel_time: data.travel_time,
+          totalVisitorsPerYear: data.totalVisitorsPerYear,
+        });
+      })
+      .catch((error) => {
+        console.error("Error fetching spot data:", error);
+        toast.error("Error fetching spot data");
+      });
+  }, [id]);
 
   const handleInputChange = (e) => {
     setFormData({
@@ -31,12 +50,12 @@ const AddTourists = () => {
     });
   };
 
-  const handleAddTour = (e) => {
+  const handleUpdateSpot = (e) => {
     e.preventDefault();
     setIsLoading(true);
 
-    fetch("http://localhost:3002/addSpot", {
-      method: "POST",
+    fetch(`http://localhost:3002/updateSpot/${id}`, {
+      method: "PUT",
       headers: {
         "Content-Type": "application/json",
       },
@@ -44,15 +63,14 @@ const AddTourists = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        toast.success("Spot Added Successfully");
+        toast.success("Spot Updated Successfully");
         setIsLoading(false);
         console.log(data);
-        setFormData({ ...initialFormData });
       })
       .catch((error) => {
         setIsLoading(false);
-        toast.error("Error adding spot");
-        console.error("Error adding spot:", error);
+        toast.error("Error updating spot");
+        console.error("Error updating spot:", error);
       });
   };
 
@@ -65,8 +83,8 @@ const AddTourists = () => {
           </div>
         )}
         <div className="w-full max-w-2xl p-8 bg-white rounded-lg shadow-lg flex flex-col items-center">
-          <h1 className="text-3xl mb-8">Add Tourist Spots</h1>
-          <form onSubmit={handleAddTour}>
+          <h1 className="text-3xl mb-8">Update Tourist Spot</h1>
+          <form onSubmit={handleUpdateSpot}>
             <div className="grid grid-cols-2 gap-4">
               <div>
                 <p>Image URL</p>
@@ -170,7 +188,7 @@ const AddTourists = () => {
             </div>
             <div className="flex justify-end mt-8">
               <button type="submit" className="btn btn-primary">
-                Add Spot
+                Update Spot
               </button>
             </div>
           </form>
@@ -181,4 +199,4 @@ const AddTourists = () => {
   );
 };
 
-export default AddTourists;
+export default UpdateTourist;

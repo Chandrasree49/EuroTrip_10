@@ -12,6 +12,7 @@ import MyList from "./Pages/MyList.jsx";
 import AddTourists from "./Pages/AddTourists.jsx";
 import AllTourists from "./Pages/AllTourists.jsx";
 import ViewDetails from "./Pages/ViewDetails.jsx";
+import UpdateTourist from "./Pages/UpdateTourist.jsx";
 import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
@@ -44,11 +45,7 @@ const router = createBrowserRouter([
 
       {
         path: "/AllTouristsSpot",
-        element: (
-          <ProtectedRoute>
-            <AllTourists></AllTourists>
-          </ProtectedRoute>
-        ),
+        element: <AllTourists />,
       },
       {
         path: "/AddTouristsSpot",
@@ -66,6 +63,15 @@ const router = createBrowserRouter([
           </ProtectedRoute>
         ),
       },
+      {
+        path: "/UpdateTourist/:id",
+        element: (
+          <ProtectedRoute>
+            <UpdateTourist />
+          </ProtectedRoute>
+        ),
+      },
+
       {
         path: "/MyList",
         element: (
