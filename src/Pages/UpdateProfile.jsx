@@ -73,9 +73,11 @@ const UpdateProfile = () => {
   };
 
   return (
+    <div className="min-h-screen pt-20"style={{backgroundImage:"url(https://img.freepik.com/free-vector/flat-budapest-landscape_1051-1006.jpg?t=st=1714416754~exp=1714420354~hmac=0a706e535f509ddea07b9c011f085feebec84d7b98f6170016ae2db194498f54&w=740)"}}>
     <form
-      className="w-[40%] mx-auto min-w[500px] border-2 rounded-xl p-5" style={{border:"4px solid rgb(23, 152, 175"}}
+      className="w-[40%] mx-auto min-w[500px] border-2 rounded-xl p-5" 
       onSubmit={handleProfileUpdate}
+      style={{background:"#FEF5FE"}}
     >
       <p>Name</p>
       <label className="input input-bordered flex items-center gap-2">
@@ -128,12 +130,13 @@ const UpdateProfile = () => {
 
       <ToastContainer></ToastContainer>
 
-      <button className="btn w-full" style={{background:"rgb(23, 152, 175"}}>Update Profile</button>
+      <button className="btn w-full mt-5" style={{background:"#A755CA"}}>Update Profile</button>
 
       {isLoading && (
         <span className="loading loading-spinner loading-lg"></span>
       )}
     </form>
+    </div>
   );
 };
 
