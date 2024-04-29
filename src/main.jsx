@@ -33,14 +33,7 @@ const router = createBrowserRouter([
         element: <Register />,
       },
 
-      {
-        path: "/UpdateProfile",
-        element: (
-          <ProtectedRoute>
-            <UpdateProfile></UpdateProfile>
-          </ProtectedRoute>
-        ),
-      },
+      
 
       {
         path: "/AllTouristsSpot",
