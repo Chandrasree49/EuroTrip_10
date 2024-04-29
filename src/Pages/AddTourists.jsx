@@ -57,14 +57,14 @@ const AddTourists = () => {
   };
 
   return (
-    <div className="min-h-screen flex justify-center items-center bg-gradient-to-b from-purple-400 to-pink-500">
+    <div className="min-h-screen flex justify-center items-center bg-gradient-to-b "style={{backgroundImage:"url(https://img.freepik.com/free-vector/multicolored-landmarks-skyline_23-2148443399.jpg?t=st=1714396214~exp=1714399814~hmac=0d8a568e4cbe70236911ae467d2b2f7dc8d952075b274967ccea5343de957310&w=996)", backgroundRepeat:"no-repeat" ,backgroundSize: "cover", backgroundPosition: "center"}}>
       <div className="container relative">
         {isLoading && (
           <div className="absolute inset-0 flex justify-center items-center bg-gray-900 bg-opacity-50">
             <span className="loading loading-lg"></span>
           </div>
         )}
-        <div className="w-full max-w-2xl p-8 bg-white rounded-lg shadow-lg flex flex-col items-center">
+        <div className="w-full max-w-2xl p-8 bg-white rounded-lg shadow-lg flex flex-col items-center mx-auto">
           <h1 className="text-3xl mb-8">Add Tourist Spots</h1>
           <form onSubmit={handleAddTour}>
             <div className="grid grid-cols-2 gap-4">

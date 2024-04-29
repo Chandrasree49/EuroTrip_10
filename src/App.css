@@ -1,7 +1,7 @@
 .active {
-  color:rgb(23, 152, 175);
+  color:#A755CA;
   background: transparent;
-  border: 2px solid rgb(23, 152, 175);
+  border: 2px solid #A755CA;
   border-radius: 10px;
 }
 .Error {

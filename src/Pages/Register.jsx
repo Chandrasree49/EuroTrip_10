@@ -96,10 +96,10 @@ const Register = () => {
   };
 
   return (
-    <div className="register">
+    <div className="register min-h-screen pt-20" style={{backgroundImage:"url(https://img.freepik.com/free-vector/landmarks-skyline-paper-style_23-2148430361.jpg?t=st=1714399763~exp=1714403363~hmac=1de06c375f7bf2aae390b2a503e62ebbcb02bb9af92b4144d4414cbd8d1c8b7d&w=996)", backgroundRepeat:"no-repeat" ,backgroundSize: "cover", backgroundPosition: "center"}}>
     <form
-      className="w-[40%] mx-auto min-w[500px] border-2 rounded-xl p-5"
-      style={{border:"4px solid rgb(23, 152, 175)"}}
+      className="w-[40%] mx-auto min-w[500px] border-2 rounded-xl p-5 "
+      style={{background:"#F7F0FA"}}
       onSubmit={handleRegister}
     >
       <p>Name</p>
@@ -264,10 +264,10 @@ const Register = () => {
       </label>
       <ToastContainer></ToastContainer>
       <br></br>
-      <button className="btn btn-success w-full" style={{background:"rgb(23, 152, 175"}}>Register</button>
+      <button className="btn btn-success w-full" style={{background:"#A755CA"}}>Register</button>
       <p className="text-center mt-4">
         Already have an account?{" "}
-        <a href="/Login" className="text-green-500 hover:underline">
+        <a href="/Login" className=" hover:underline" style={{color:"#A755CA"}}>
           Login
         </a>
       </p>

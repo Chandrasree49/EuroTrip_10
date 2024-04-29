@@ -49,11 +49,12 @@ const Login = () => {
   };
 
   return (
-    <div className="w-full md:max-w-[40%] mx-auto md:min-w-[500px] border-2 rounded-xl p-5" style={{border:" 4px solid rgb(23, 152, 175"}}>
+    <div className="min-h-screen pt-20" style={{backgroundImage:"url(https://img.freepik.com/free-vector/landmarks-skyline-paper-style-gradient-violet-sky_23-2148424180.jpg?t=st=1714400548~exp=1714404148~hmac=26ab9b3a960d67f09ce2da71396cb856a17f4a626045f2f45e93e21811755e1c&w=996)", backgroundRepeat:"no-repeat" ,backgroundSize: "cover", backgroundPosition: "center"}}>
+    <div className="w-full md:max-w-[20%] mx-auto md:min-w-[500px] border-2 rounded-xl p-5" style={{background:"#F7F0FA"}}>
       <form onSubmit={handleLogin}>
         <ToastContainer></ToastContainer>
         <p>Email</p>
-        <label className="input input-bordered flex items-center gap-2">
+        <label className="input input-bordered flex items-center gap-2 ">
           <input
             name="email"
             type="text"
@@ -144,20 +145,20 @@ const Login = () => {
             </button>
           </div>
         </label>
-        <button className="btn w-full mt-4" style={{background:"rgb(23, 152, 175"}}>Login</button>
+        <button className="btn w-full mt-4" style={{background:"#A755CA"}}>Login</button>
       </form>
       <div className="flex justify-center mt-4 md:justify-between">
         <button
-          className="btn btn-outline btn-accent w-full md:w-auto md:ml-2 mb-2 md:mb-0"
+          className="btn btn-outline btn-secondary w-full md:w-auto md:ml-2 mb-2 md:mb-0"
           onClick={handleGoogleLogin}
           style={{ marginTop: "20px", marginLeft: "30px" }}
         >
           {" "}
           Google Login
         </button>
-        <h5 style={{fontSize:"18px", fontWeight:"bold",color:"rgb(23, 152, 175", marginTop:"30px"}}>or</h5>
+        <h5 style={{fontSize:"18px", fontWeight:"bold",color:"#A755CA", marginTop:"30px"}}>or</h5>
         <button
-          className="btn btn-outline btn-accent w-full md:w-auto md:ml-2 mb-2 md:mb-0"
+          className="btn btn-outline btn-secondary w-full md:w-auto md:ml-2 mb-2 md:mb-0"
           onClick={handleGitLogin}
           style={{ margin: "20px" }}
         >
@@ -173,10 +174,11 @@ const Login = () => {
       )}
       <p className="text-center mt-4">
         Don't have an account?{" "}
-        <a href="/register" className="text-green-500 hover:underline">
+        <a href="/register" className="hover:underline" style={{color:"#A755CA"}}>
           Register
         </a>
       </p>
+    </div>
     </div>
   );
 };
