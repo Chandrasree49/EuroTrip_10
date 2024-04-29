@@ -86,13 +86,14 @@ const MyList = () => {
   return (
     <div className="flex justify-center items-center h-screen">
       <ToastContainer />
-      <div className="w-full max-w-3xl p-6 bg-white rounded-lg shadow-md">
+      <div className="w-full max-w-4xl p-6 bg-white rounded-lg shadow-md">
         {isLoading && (
           <div className="absolute inset-0 flex justify-center items-center bg-gray-900 bg-opacity-50">
             <span className="loading loading-lg"></span>
           </div>
-        )}
-        <h1 className="text-2xl font-bold mb-4">My Tourist Spots</h1>
+        )}<h1 className="text-3xl mb-4 text-center font-bold">
+        My Tourists Spots
+      </h1>
         <table className="w-full">
           <thead>
             <tr>
@@ -111,19 +112,26 @@ const MyList = () => {
                 <td className="border px-4 py-2">{spot.location}</td>
                 <td className="border px-4 py-2">{spot.short_description}</td>
                 <td className="border px-4 py-2">
+                  <div className="flex gap-2">
+                    <div className="pt-2">
                   <Link
                     to={`/UpdateTourist/${spot._id}`}
-                    className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+                    className=" text-white font-bold py-2 px-4 rounded"
+                    style={{background:"#C730C7"}}
                   >
                     Update
                   </Link>
-
+                  </div>
+<div>
                   <button
-                    className="px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600"
+                    className="px-4 py-2 text-white rounded hover:bg-red-600"
                     onClick={() => handleDeleteSpot(spot._id)}
+                    style={{background:"#9844D5"}}
                   >
                     Delete
                   </button>
+                  </div>
+                  </div>
                 </td>
               </tr>
             ))}

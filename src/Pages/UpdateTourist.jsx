@@ -82,8 +82,8 @@ const UpdateTourist = () => {
             <span className="loading loading-lg"></span>
           </div>
         )}
-        <div className="w-full max-w-2xl p-8 bg-white rounded-lg shadow-lg flex flex-col items-center">
-          <h1 className="text-3xl mb-8">Update Tourist Spot</h1>
+        <div className="w-full mx-auto max-w-2xl p-8 bg-white rounded-lg shadow-lg flex flex-col items-center">
+          <h1 className="text-3xl mb-8 font-bold">Update Tourist Spot</h1>
           <form onSubmit={handleUpdateSpot}>
             <div className="grid grid-cols-2 gap-4">
               <div>
@@ -187,7 +187,7 @@ const UpdateTourist = () => {
               </div>
             </div>
             <div className="flex justify-end mt-8">
-              <button type="submit" className="btn btn-primary">
+              <button type="submit" className="btn " style={{background:"#BD25C7"}}>
                 Update Spot
               </button>
             </div>
