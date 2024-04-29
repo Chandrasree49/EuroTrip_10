@@ -1,0 +1,38 @@
+.active {
+  color:rgb(23, 152, 175);
+  background: transparent;
+  border: 2px solid rgb(23, 152, 175);
+  border-radius: 10px;
+}
+.Error {
+  padding-top: 50px;
+  min-height: 100vh;
+  background-image: linear-gradient(1deg, #4470cf, #b8c994);
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  text-align: center;
+  color: #343434;
+}
+.Error h1 {
+  font-size: 160px;
+  margin: 0;
+  font-weight: 900;
+  letter-spacing: 20px;
+}
+.Error a {
+  text-decoration: none;
+  background: rgb(0, 162, 255);
+  color: #fff;
+  padding: 12px 24px;
+  display: inline-block;
+  border-radius: 20px;
+  font-size: 14px;
+  text-transform: uppercase;
+  transition: 0.4s;
+  margin-top: 50px;
+}
+.Error a:hover {
+  background: rgb(80, 4, 134);
+}
