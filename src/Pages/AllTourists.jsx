@@ -31,18 +31,19 @@ const AllTourists = () => {
 
   return (
     <div className="container mx-auto mt-8">
-      <h1 className="text-3xl mb-4">All Tourists Spots</h1>
-      <div className="flex justify-end mb-4">
-        <label htmlFor="sortBy" className="mr-2">
+      <h1 className="text-3xl mb-4 text-center font-bold" style={{color:"from-purple-400"}}>All Tourists Spots</h1>
+      <div className="flex justify-center mb-4">
+        <label htmlFor="sortBy" className="mr-2 mt-1 text-2xl font-bold " style={{color:"#701a75"}}>
           Sort by:
         </label>
         <select
           id="sortBy"
           value={sortBy}
           onChange={handleSortChange}
-          className="border p-2"
+          className="border p-2 font-semibold"
+        style={{border: "2px solid purple", borderRadius:"10px"}}
         >
-          <option value="">Select</option>
+          <option value="" >Select</option>
           <option value="ascending">Ascending</option>
           <option value="descending">Descending</option>
         </select>
