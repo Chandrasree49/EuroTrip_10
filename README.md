@@ -44,8 +44,10 @@
 
 ## In Pages/url.js
 
+```bash
 You can change api end point link
 for mode 0 its local and for mode 1 its live server url
+```
 
 Used Npm packages:
 
