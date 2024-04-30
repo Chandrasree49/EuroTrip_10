@@ -2,7 +2,7 @@
 
 ## Live Website
 
-[EuroTrip Live](https://assignment-9-3767f.web.app)
+[EuroTrip Live](https://assignment-10-49ecd.web.app)
 
 ## Features
 
