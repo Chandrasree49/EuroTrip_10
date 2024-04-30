@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useLocation } from "react-router-dom";
+import { apiurl } from "./url";
 
 const AllTourists = ({ countryName }) => {
   const [spots, setSpots] = useState([]);
@@ -14,16 +15,24 @@ const AllTourists = ({ countryName }) => {
 
   useEffect(() => {
     setIsLoading(true);
-    let url = "http://localhost:3002/spots";
+    let url = `${apiurl}/spots`;
     if (country) {
-      url = `http://localhost:3002/spotsbycountry?country_name=${country}`;
+      url = `${apiurl}/spotsbycountry?country_name=${country}`;
     }
     fetch(url)
       .then((res) => res.json())
       .then((data) => {
         setSpots(data);
         setIsLoading(false);
-      })
+      });
+
+    fetch(url, {
+      mode: "no-cors",
+      credentials: "include",
+      method: "POST",
+    })
+      .then((response) => response.json())
+      .then((json) => console.log(json))
       .catch((error) => {
         console.error("Error retrieving spots:", error);
         setIsLoading(false);
@@ -41,7 +50,12 @@ const AllTourists = ({ countryName }) => {
 
   return (
     <div className="container mx-auto">
-      <h1 className="text-3xl text-center font-bold my-10" style={{color:"#BD25C7"}}>All Tourists Spots</h1>
+      <h1
+        className="text-3xl text-center font-bold my-10"
+        style={{ color: "#BD25C7" }}
+      >
+        All Tourists Spots
+      </h1>
       <div className="flex justify-center mb-4">
         <label htmlFor="sortBy" className="mr-2 mt-1 text-2xl font-bold">
           Sort by:

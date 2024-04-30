@@ -3,6 +3,7 @@ import React, { useState, useContext } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { AuthContext } from "../component/AuthProvider/AuthProvider";
+import { apiurl } from "./url";
 
 const AddTourists = () => {
   const { user } = useContext(AuthContext);
@@ -35,7 +36,7 @@ const AddTourists = () => {
     e.preventDefault();
     setIsLoading(true);
 
-    fetch("http://localhost:3002/addSpot", {
+    fetch(`${apiurl}/addSpot`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -57,14 +58,26 @@ const AddTourists = () => {
   };
 
   return (
-    <div className="min-h-screen flex justify-center items-center bg-gradient-to-b "style={{backgroundImage:"url(https://img.freepik.com/free-vector/multicolored-landmarks-skyline_23-2148443399.jpg?t=st=1714396214~exp=1714399814~hmac=0d8a568e4cbe70236911ae467d2b2f7dc8d952075b274967ccea5343de957310&w=996)", backgroundRepeat:"no-repeat",backgroundSize: "cover", backgroundPosition: "center"}}>
+    <div
+      className="min-h-screen flex justify-center items-center bg-gradient-to-b "
+      style={{
+        backgroundImage:
+          "url(https://img.freepik.com/free-vector/multicolored-landmarks-skyline_23-2148443399.jpg?t=st=1714396214~exp=1714399814~hmac=0d8a568e4cbe70236911ae467d2b2f7dc8d952075b274967ccea5343de957310&w=996)",
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
+    >
       <div className="container relative">
         {isLoading && (
           <div className="absolute inset-0 flex justify-center items-center bg-gray-900 bg-opacity-50">
             <span className="loading loading-lg"></span>
           </div>
         )}
-        <div className="w-full max-w-2xl p-8  rounded-lg shadow-lg flex flex-col items-center mx-auto" style={{background:"#FEF5FE"}}>
+        <div
+          className="w-full max-w-2xl p-8  rounded-lg shadow-lg flex flex-col items-center mx-auto"
+          style={{ background: "#FEF5FE" }}
+        >
           <h1 className="text-3xl mb-8">Add Tourist Spots</h1>
           <form onSubmit={handleAddTour}>
             <div className="grid grid-cols-2 gap-4">
@@ -169,7 +182,11 @@ const AddTourists = () => {
               </div>
             </div>
             <div className="flex justify-end mt-8">
-              <button type="submit" className="btn" style={{background:"#A755CA"}}>
+              <button
+                type="submit"
+                className="btn"
+                style={{ background: "#A755CA" }}
+              >
                 Add Spot
               </button>
             </div>

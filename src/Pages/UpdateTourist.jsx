@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { AuthContext } from "../component/AuthProvider/AuthProvider";
+import { apiurl } from "./url";
 
 const UpdateTourist = () => {
   const { id } = useParams();
@@ -26,7 +27,7 @@ const UpdateTourist = () => {
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
-    fetch(`http://localhost:3002/spotsbyId/${id}`)
+    fetch(`${apiurl}/spotsbyId/${id}`)
       .then((res) => res.json())
       .then((data) => {
         setFormData({
@@ -60,7 +61,7 @@ const UpdateTourist = () => {
     e.preventDefault();
     setIsLoading(true);
 
-    fetch(`http://localhost:3002/updateSpot/${id}`, {
+    fetch(`${apiurl}/updateSpot/${id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",

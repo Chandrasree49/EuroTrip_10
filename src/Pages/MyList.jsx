@@ -4,6 +4,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Swal from "sweetalert2";
 import { Link } from "react-router-dom";
+import { apiurl } from "./url";
 
 const MyList = () => {
   const { user } = useContext(AuthContext);
@@ -18,13 +19,9 @@ const MyList = () => {
   const confirmDelete = async (spotIds) => {
     setIsLoading(true);
     try {
-      
-      const response = await fetch(
-        `http://localhost:3002/deleteSpot/${spotIds}`,
-        {
-          method: "DELETE",
-        }
-      );
+      const response = await fetch(`${apiurl}/deleteSpot/${spotIds}`, {
+        method: "DELETE",
+      });
       const data = await response.json();
 
       if (!response.ok) {
@@ -39,7 +36,6 @@ const MyList = () => {
       setIsLoading(false);
       toast.error("Error deleting spot:");
       console.error("Error deleting spot:", error);
-      
     }
   };
 
@@ -61,9 +57,7 @@ const MyList = () => {
 
   const fetchSpots = async (email) => {
     try {
-      const response = await fetch(
-        `http://localhost:3002/spotsbyuser?user=${email}`
-      );
+      const response = await fetch(`${apiurl}/spotsbyuser?user=${email}`);
       if (!response.ok) {
         throw new Error("Failed to fetch spots");
       }
@@ -75,7 +69,6 @@ const MyList = () => {
   };
 
   const handleUpdateSpot = (spotId) => {
-   
     console.log("Update spot with ID:", spotId);
   };
 
@@ -91,9 +84,10 @@ const MyList = () => {
           <div className="absolute inset-0 flex justify-center items-center bg-gray-900 bg-opacity-50">
             <span className="loading loading-lg"></span>
           </div>
-        )}<h1 className="text-3xl mb-4 text-center font-bold">
-        My Tourists Spots
-      </h1>
+        )}
+        <h1 className="text-3xl mb-4 text-center font-bold">
+          My Tourists Spots
+        </h1>
         <table className="w-full">
           <thead>
             <tr>
@@ -114,23 +108,23 @@ const MyList = () => {
                 <td className="border px-4 py-2">
                   <div className="flex gap-2">
                     <div className="pt-2">
-                  <Link
-                    to={`/UpdateTourist/${spot._id}`}
-                    className=" text-white font-bold py-2 px-4 rounded"
-                    style={{background:"#C730C7"}}
-                  >
-                    Update
-                  </Link>
-                  </div>
-<div>
-                  <button
-                    className="px-4 py-2 text-white rounded hover:bg-red-600"
-                    onClick={() => handleDeleteSpot(spot._id)}
-                    style={{background:"#9844D5"}}
-                  >
-                    Delete
-                  </button>
-                  </div>
+                      <Link
+                        to={`/UpdateTourist/${spot._id}`}
+                        className=" text-white font-bold py-2 px-4 rounded"
+                        style={{ background: "#C730C7" }}
+                      >
+                        Update
+                      </Link>
+                    </div>
+                    <div>
+                      <button
+                        className="px-4 py-2 text-white rounded hover:bg-red-600"
+                        onClick={() => handleDeleteSpot(spot._id)}
+                        style={{ background: "#9844D5" }}
+                      >
+                        Delete
+                      </button>
+                    </div>
                   </div>
                 </td>
               </tr>
