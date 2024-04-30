@@ -84,7 +84,7 @@ const Home = () => {
         <Hero></Hero>
       </div>
       <div className="container mx-auto px-4 py-8">
-        <h1 className="text-3xl text-center font-bold">Countries</h1>
+        <h1 className="text-3xl text-center font-bold my-20" style={{color:"#BD25C7"}}>Countries</h1>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           {countries.map((country) => (
             <div
@@ -107,10 +107,10 @@ const Home = () => {
       <div className="container mx-auto px-4 py-8">
         <AllTourists></AllTourists>
       </div>
-      <hr></hr>
+   
       <div className="container mx-auto px-4 py-8">
         <section className="mt-12">
-          <h1 className="text-3xl text-center font-bold">Featured Packages</h1>
+          <h1 className="text-3xl text-center font-bold my-10" style={{color:"#BD25C7"}}>Featured Packages</h1>
           <div
             style={{
               display: "flex",
@@ -151,7 +151,7 @@ const Home = () => {
         <hr></hr>
         <hr></hr>
         <section className="mt-12">
-          <h1 className="text-3xl text-center font-bold">Travel Tips</h1>
+          <h1 className="text-3xl text-center font-bold my-20" style={{color:"#BD25C7"}}>Travel Tips</h1>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {travelTips.map((tip) => (

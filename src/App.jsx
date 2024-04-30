@@ -4,7 +4,7 @@ import "./App.css";
 import Nav from "./component/Nav";
 import Login from "./Pages/Login";
 import Register from "./Pages/Register";
-import Hero from "./component/Hero";
+
 
 function App() {
   const [count, setCount] = useState(0);

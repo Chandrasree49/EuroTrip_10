@@ -41,7 +41,7 @@ const AllTourists = ({ countryName }) => {
 
   return (
     <div className="container mx-auto">
-      <h1 className="text-3x text-center font-bold">All Tourists Spots</h1>
+      <h1 className="text-3xl text-center font-bold my-10" style={{color:"#BD25C7"}}>All Tourists Spots</h1>
       <div className="flex justify-center mb-4">
         <label htmlFor="sortBy" className="mr-2 mt-1 text-2xl font-bold">
           Sort by:
