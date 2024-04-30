@@ -1,6 +1,11 @@
 import React, { useRef, useState } from "react";
+
+import banner1 from "../assets/images/banner1.jpg";
+import banner2 from "../assets/images/banner2.jpg";
+import banner3 from "../assets/images/banner3.jpg";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Typewriter } from "react-simple-typewriter";
+
 
 import "swiper/css";
 import "swiper/css/pagination";
@@ -17,7 +22,7 @@ import {
   EffectCoverflow,
 } from "swiper/modules";
 
-import { NavLink } from "react-router-dom";
+import { Form, NavLink } from "react-router-dom";
 
 const Hero = () => {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
@@ -83,7 +88,7 @@ const Hero = () => {
             </p>
           
             <img
-              src="https://img.freepik.com/free-photo/aerial-view-city-by-water_23-2150893117.jpg?t=st=1714421565~exp=1714425165~hmac=c6aa0fe4819e10b788755b984c16dda2ac5b3008b7aebfa6cb0d37cc730b48b7&w=740"
+              src={banner1}
               alt="Nature"
               className="slide-image"
             />
@@ -126,7 +131,7 @@ const Hero = () => {
             </h1>
            
             <img
-              src="https://img.freepik.com/free-photo/night-city-view_1417-1728.jpg?t=st=1714473994~exp=1714477594~hmac=da75a272099419b63cd363cb7975c4d3d7a48ef4f5dcd81631973a22e4aacd95&w=1380"
+              src={banner2}
               alt="Nature"
               className="slide-image"
             />
@@ -168,7 +173,7 @@ const Hero = () => {
             </h1>
             
             <img
-              src="https://img.freepik.com/free-photo/low-angle-shot-colorful-fireworks-church-starry-evening_181624-34258.jpg?t=st=1714474139~exp=1714477739~hmac=3c2ab7666ed90acb76c7dfe4fb750f263c8a3809c938de7d452fbe458d785693&w=996"
+              src={banner3}
               alt="Nature"
               className="slide-image"
             />

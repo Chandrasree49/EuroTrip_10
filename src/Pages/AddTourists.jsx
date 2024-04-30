@@ -1,4 +1,5 @@
 import React, { useState, useContext } from "react";
+import pp1 from "../assets/images/pp1.jpg"
 
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -61,8 +62,7 @@ const AddTourists = () => {
     <div
       className="min-h-screen flex justify-center items-center bg-gradient-to-b "
       style={{
-        backgroundImage:
-          "url(https://img.freepik.com/free-vector/multicolored-landmarks-skyline_23-2148443399.jpg?t=st=1714396214~exp=1714399814~hmac=0d8a568e4cbe70236911ae467d2b2f7dc8d952075b274967ccea5343de957310&w=996)",
+        backgroundImage:`url(${pp1})`,
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover",
         backgroundPosition: "center",

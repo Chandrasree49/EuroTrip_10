@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import pp3 from "../assets/images/pp3.jpg"
 import { useState } from "react";
 import { AuthContext } from "../component/AuthProvider/AuthProvider.jsx";
 import { NavLink } from "react-router-dom";
@@ -96,7 +97,7 @@ const Register = () => {
   };
 
   return (
-    <div className="register min-h-screen pt-20" style={{backgroundImage:"url(https://img.freepik.com/free-vector/landmarks-skyline-paper-style_23-2148430361.jpg?t=st=1714399763~exp=1714403363~hmac=1de06c375f7bf2aae390b2a503e62ebbcb02bb9af92b4144d4414cbd8d1c8b7d&w=996)", backgroundRepeat:"no-repeat" ,backgroundSize: "cover", backgroundPosition: "center"}}>
+    <div className="register min-h-screen pt-20" style={{ backgroundImage:`url(${pp3})`, backgroundRepeat:"no-repeat" ,backgroundSize: "cover", backgroundPosition: "center"}}>
     <form
       className="w-[40%] mx-auto min-w[500px] border-2 rounded-xl p-5 "
       style={{background:"#F7F0FA"}}

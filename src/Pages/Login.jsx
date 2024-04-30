@@ -1,4 +1,5 @@
 import React from "react";
+import pp2 from "../assets/images/pp2.jpg"
 import { useContext, useState } from "react";
 import { AuthContext } from "../component/AuthProvider/AuthProvider";
 import { useNavigate, NavLink } from "react-router-dom";
@@ -61,7 +62,7 @@ const Login = () => {
       className="min-h-screen pt-20"
       style={{
         backgroundImage:
-          "url(https://img.freepik.com/free-vector/landmarks-skyline-paper-style-gradient-violet-sky_23-2148424180.jpg?t=st=1714400548~exp=1714404148~hmac=26ab9b3a960d67f09ce2da71396cb856a17f4a626045f2f45e93e21811755e1c&w=996)",
+          `url(${pp2})`,
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover",
         backgroundPosition: "center",

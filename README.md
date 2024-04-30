@@ -19,6 +19,7 @@
    - Find different country details,all tourists spot details,features packages and travel tips.
 
 4. **All tourists spot**
+
    - User can see all tourists spots and clicking on view details button they can see all the details of tourists spot
 
 5. **Add tourists spot and Mylist**
@@ -30,7 +31,7 @@
 6. Clone the repository:
 
    ```bash
-   https://github.com/programming-hero-web-course-4/b9a9-real-estate-Chandrasree49
+   https://github.com/programming-hero-web-course-4/B9A10-client-side-Chandrasree49
    ```
 
 ```bash
@@ -40,6 +41,11 @@
 ```bash
   npm run dev
 ```
+
+## In Pages/url.js
+
+You can change api end point link
+for mode 0 its local and for mode 1 its live server url
 
 Used Npm packages:
 
