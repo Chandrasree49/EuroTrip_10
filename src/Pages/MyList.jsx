@@ -77,7 +77,7 @@ const MyList = () => {
   };
 
   return (
-    <div className="flex justify-center items-center h-screen">
+    <div className="flex justify-center items-center min-h-screen">
       <ToastContainer />
       <div className="w-full max-w-4xl p-6 bg-white rounded-lg shadow-md">
         {isLoading && (

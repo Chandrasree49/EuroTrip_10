@@ -1,8 +1,51 @@
-# React + Vite
+# Steps to Run the Project
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Live Website
 
-Currently, two official plugins are available:
+[EuroTrip Live](https://assignment-9-3767f.web.app)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
+
+1. **User Authentication:**
+
+   - Users can sign up and log in via email, Google, or GitHub accounts.
+
+2. **Profile Management:**
+
+   - Users can update their profile data and photo URL,they can update their tourists spot details
+
+3. **Home page**
+
+   - Find different country details,all tourists spot details,features packages and travel tips.
+
+4. **All tourists spot**
+   - User can see all tourists spots and clicking on view details button they can see all the details of tourists spot
+
+5. **Add tourists spot and Mylist**
+
+   - User can fillup the form and add their favourite spot and this spots will added to my list.In my list page they can update and delete data form database
+
+   ## Getting Started
+
+6. Clone the repository:
+
+   ```bash
+   https://github.com/programming-hero-web-course-4/b9a9-real-estate-Chandrasree49
+   ```
+
+```bash
+  npm install
+```
+
+```bash
+  npm run dev
+```
+
+Used Npm packages:
+
+"firebase": "^10.11.0",
+"Lottie React":"^2.4.0",
+"React-simple-typewriter":"^5.0.1"
+"react-toastify": "^10.0.5",
+"sweetalert2": "^11.10.7",
+"swiper": "^11.1.1"
