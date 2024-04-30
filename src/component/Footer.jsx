@@ -8,12 +8,12 @@ const Footer = () => {
           <div>
             <img
               src="https://cmkt-image-prd.freetls.fastly.net/0.1.0/ps/1037209/7917/5269/m1/fpnw/wm0/low-poly-colorful-icon-plane-.png?1456746251&s=dec92b172f11ab1e4361f348cf763d9e"
-              style={{ width: "80px", height: "50px" }}
+              style={{ width: "80px", height: "40px" }}
             />
           </div>
           <div>
             <h1
-              style={{ fontSize: "28px", fontWeight: "bold", color: "#7C078F" }}
+              style={{ fontSize: "28px", fontWeight: "bold", color: "#7C078F",marginTop:"5px"}}
             >
               Euro<span style={{ color: "#09A0BE" }}>Trip</span>
             </h1>
