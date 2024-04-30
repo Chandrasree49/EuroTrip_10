@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import AllTourists from "./AllTourists";
 import Lottie from "lottie-react";
 import travelanim from "./travel.json";
+import { Typewriter } from "react-simple-typewriter";
 
 const Home = () => {
   const navigateTo = useNavigate();

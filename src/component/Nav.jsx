@@ -103,20 +103,20 @@ const Nav = () => {
           </ul>
         </div>
         <div className="flex">
-            <div>
-            <img src="https://cmkt-image-prd.freetls.fastly.net/0.1.0/ps/1037209/7917/5269/m1/fpnw/wm0/low-poly-colorful-icon-plane-.png?1456746251&s=dec92b172f11ab1e4361f348cf763d9e" style={{ width:"80px",height:"50px" }} />
-            </div>
-            <div>
-            <h1 style={{ fontSize: "28px", fontWeight: "bold", color:"#7C078F" }}>
-        
-        Euro<span style={{ color: "#09A0BE" }}>Trip</span>
-      </h1>
-            </div>
+          <div>
+            <img
+              src="https://cmkt-image-prd.freetls.fastly.net/0.1.0/ps/1037209/7917/5269/m1/fpnw/wm0/low-poly-colorful-icon-plane-.png?1456746251&s=dec92b172f11ab1e4361f348cf763d9e"
+              style={{ width: "80px", height: "50px" }}
+            />
+          </div>
+          <div>
+            <h1
+              style={{ fontSize: "28px", fontWeight: "bold", color: "#7C078F" }}
+            >
+              Euro<span style={{ color: "#09A0BE" }}>Trip</span>
+            </h1>
+          </div>
         </div>
-        
-
-
-
       </div>
       <div className="navbar-center hidden lg:flex justify-center">
         <ul className="menu menu-horizontal px-1 flex">
@@ -154,16 +154,18 @@ const Nav = () => {
           >
             Add Tourists Spot
           </NavLink>
-          <NavLink
-            to="/Register"
-            className={({ isActive }) =>
-              isActive
-                ? "font-semibold active py-2 px-4 "
-                : " font-semibold py-2 px-4"
-            }
-          >
-            Register
-          </NavLink>
+          {user == null && (
+            <NavLink
+              to="/Register"
+              className={({ isActive }) =>
+                isActive
+                  ? "font-semibold active py-2 px-4 "
+                  : " font-semibold py-2 px-4"
+              }
+            >
+              Register
+            </NavLink>
+          )}
           {user != null && (
             <NavLink
               to="/UpdateProfile"
@@ -206,14 +208,22 @@ const Nav = () => {
         )}
         {!user && (
           <a>
-            <NavLink to="/Login" className="btn" style={{background:"#BD57C1"}}>
+            <NavLink
+              to="/Login"
+              className="btn"
+              style={{ background: "#BD57C1" }}
+            >
               login
             </NavLink>
           </a>
         )}
 
         {user?.accessToken.length >= 4 && (
-          <a className="btn" onClick={handleLogout} style={{background:"#BF5DC3"}} >
+          <a
+            className="btn"
+            onClick={handleLogout}
+            style={{ background: "#BF5DC3" }}
+          >
             Logout
           </a>
         )}

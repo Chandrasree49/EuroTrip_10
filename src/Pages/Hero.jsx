@@ -1,5 +1,6 @@
 import React, { useRef, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { Typewriter } from "react-simple-typewriter";
 
 import "swiper/css";
 import "swiper/css/pagination";
@@ -54,8 +55,27 @@ const Hero = () => {
               style={{ animationDuration: "2s", fontSize: "18px" }}
             >
               {" "}
-              Home is where we find solace in <br></br>the familiar, celebrate
-              life's milestones.
+              <h1
+                style={{
+                  paddingTop: "1rem",
+                  margin: "auto 0",
+                  fontWeight: "bold",
+                  fontSize: "20px",
+                }}
+              >
+                Life is simple{" "}
+                <span style={{ color: "green", fontWeight: "bold" }}>
+                  <Typewriter
+                    words={["Eat", "Sleep", "Travel", "Repeat!"]}
+                    loop={5}
+                    cursor
+                    cursorStyle="_"
+                    typeSpeed={70}
+                    deleteSpeed={50}
+                    delaySpeed={1000}
+                  />
+                </span>
+              </h1>
             </p>
             <NavLink to="/ErrorPage">
               <button
