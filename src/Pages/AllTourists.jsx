@@ -40,10 +40,8 @@ const AllTourists = ({ countryName }) => {
   };
 
   return (
-    <div className="container mx-auto mt-8">
-      <h1 className="text-3xl mb-4 text-center font-bold">
-        All Tourists Spots
-      </h1>
+    <div className="container mx-auto">
+      <h1 className="text-3x text-center font-bold">All Tourists Spots</h1>
       <div className="flex justify-center mb-4">
         <label htmlFor="sortBy" className="mr-2 mt-1 text-2xl font-bold">
           Sort by:
@@ -61,7 +59,9 @@ const AllTourists = ({ countryName }) => {
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {isLoading ? (
-          <div>Loading...</div>
+          <div className="absolute inset-0 flex justify-center items-center bg-gray-900 bg-opacity-50">
+            <span className="loading loading-lg"></span>
+          </div>
         ) : (
           spots.map((spot, index) => (
             <div key={index} className="bg-white p-4 rounded-lg shadow-md">
@@ -69,8 +69,7 @@ const AllTourists = ({ countryName }) => {
                 src={spot.image}
                 alt={spot.tourists_spot_name}
                 className="w-full mb-2 rounded-lg"
-                height={200}
-                width={200}
+                style={{ height: "250px" }}
               />
               <h2 className="text-xl font-semibold mb-2">
                 {spot.tourists_spot_name}
@@ -88,9 +87,14 @@ const AllTourists = ({ countryName }) => {
               <p>
                 <strong>Seasonality:</strong> {spot.seasonality}
               </p>
+              <p>
+                <strong>average_cost:</strong> {spot.average_cost}
+              </p>
+              <br />
               <Link
                 to={`/ViewDetails/${spot._id}`}
-                className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+                className=" text-white font-bold py-2 px-4 rounded mt-40"
+                style={{ background: "#A755CA" }}
               >
                 View Details
               </Link>

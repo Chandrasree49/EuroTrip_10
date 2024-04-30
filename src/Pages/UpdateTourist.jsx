@@ -1,10 +1,13 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { useParams } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { AuthContext } from "../component/AuthProvider/AuthProvider";
 
 const UpdateTourist = () => {
   const { id } = useParams();
+  const { user } = useContext(AuthContext);
+  console.log(user.email);
   const initialFormData = {
     image: "",
     tourists_spot_name: "",
@@ -15,13 +18,14 @@ const UpdateTourist = () => {
     seasonality: "",
     travel_time: "",
     totalVisitorsPerYear: "",
+    userEmail: user.email,
+    userName: user.displayName,
   };
 
   const [formData, setFormData] = useState({ ...initialFormData });
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
-    
     fetch(`http://localhost:3002/spotsbyId/${id}`)
       .then((res) => res.json())
       .then((data) => {
@@ -35,6 +39,8 @@ const UpdateTourist = () => {
           seasonality: data.seasonality,
           travel_time: data.travel_time,
           totalVisitorsPerYear: data.totalVisitorsPerYear,
+          userEmail: user.email,
+          userName: user.displayName,
         });
       })
       .catch((error) => {
@@ -187,7 +193,11 @@ const UpdateTourist = () => {
               </div>
             </div>
             <div className="flex justify-end mt-8">
-              <button type="submit" className="btn " style={{background:"#BD25C7"}}>
+              <button
+                type="submit"
+                className="btn "
+                style={{ background: "#BD25C7" }}
+              >
                 Update Spot
               </button>
             </div>
