@@ -13,6 +13,7 @@ import AddTourists from "./Pages/AddTourists.jsx";
 import AllTourists from "./Pages/AllTourists.jsx";
 import ViewDetails from "./Pages/ViewDetails.jsx";
 import UpdateTourist from "./Pages/UpdateTourist.jsx";
+import ErrorPage from "./Pages/ErrorPage.jsx";
 import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
@@ -81,6 +82,10 @@ const router = createBrowserRouter([
         ),
       },
     ],
+  },
+  {
+    path: "*",
+    element: <ErrorPage></ErrorPage>,
   },
 ]);
 

@@ -150,6 +150,7 @@ const Home = () => {
                 <p>{pkg.description}</p>
                 <p className="font-bold mt-2">Price: {pkg.price}</p>
                 <Link
+                  to="/ErrorPage"
                   className="mt-4 block text-center text-white font-bold py-2 px-4 rounded"
                   style={{ background: "#A755CA" }}
                 >
